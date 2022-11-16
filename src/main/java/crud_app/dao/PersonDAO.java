@@ -1,7 +1,7 @@
-package ru.futsey.springcourse.person.dao;
+package crud_app.dao;
 
+import crud_app.models.Person;
 import org.springframework.stereotype.Component;
-import ru.futsey.springcourse.person.models.Person;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,5 +31,10 @@ public class PersonDAO {
                 .filter(person -> person.getId() == id)
                 .findAny()
                 .orElse(null);
+    }
+
+    public void save(Person person) {
+        person.setId(++PEOPLE_COUNT);
+        people.add(person);
     }
 }

@@ -1,12 +1,11 @@
-package ru.futsey.springcourse.person.controllers;
+package crud_app.controllers;
 
+import crud_app.dao.PersonDAO;
+import crud_app.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import ru.futsey.springcourse.person.dao.PersonDAO;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/people")
@@ -31,8 +30,24 @@ public class PeopleController {
         return "people/show";
     }
 
-    @GetMapping("/qqq")
-    public String qqq() {
-        return "people/qqq";
+    @GetMapping("/new")
+    public String newPerson(Model model) {
+        model.addAttribute("person", new Person());
+        return "people/new";
+    }
+
+    /**
+     * Кроме того, вышестоящий метод можно записать следующим образом, используя параметр @ModelAttribute(),
+     * где мы передадим поля person из вьюшки new:
+    @GetMapping("/new")
+    public String newPerson(@ModelAttribute("person") Person person) {
+        return "people/new";
+    }
+     */
+
+    @PostMapping()
+    public String create(@ModelAttribute("person") Person person) {
+        personDAO.save(person);
+        return "redirect:/people";
     }
 }

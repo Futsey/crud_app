@@ -1,4 +1,4 @@
-package ru.futsey.springcourse.person.models;
+package crud_app.models;
 
 import java.util.Objects;
 
@@ -6,6 +6,9 @@ public class Person {
 
     int id;
     String name;
+
+    public Person() {
+    }
 
     public Person(int id, String name) {
         this.id = id;

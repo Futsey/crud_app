@@ -1,4 +1,4 @@
-package crud_app;
+package crud_app.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -13,7 +13,7 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 @Configuration
-@ComponentScan("ru.futsey.springcourse")
+@ComponentScan("crud_app")
 @EnableWebMvc
 public class SpringConfig implements WebMvcConfigurer {
 
