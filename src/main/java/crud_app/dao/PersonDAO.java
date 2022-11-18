@@ -3,6 +3,7 @@ package crud_app.dao;
 import crud_app.models.Person;
 import org.springframework.stereotype.Component;
 
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,32 +11,64 @@ import java.util.List;
 public class PersonDAO {
 
     private static int PEOPLE_COUNT;
-    private List<Person> people;
+    private static final String URL = "jdbc:postgresql://localhost:5432/alishev_spring_db";
+    private static final String USERNAME = "postgres";
+    private static final String PASSWORD = "password";
 
-    {
-        people = new ArrayList<>();
+    private static Connection connection;
 
-        people.add(new Person(++PEOPLE_COUNT, "Oleg", 14, "Oleg@mail.com"));
-        people.add(new Person(++PEOPLE_COUNT, "Andrew", 41, "Andrew@mail.com"));
-        people.add(new Person(++PEOPLE_COUNT, "Anton", 24, "Anton@mail.com"));
-        people.add(new Person(++PEOPLE_COUNT, "Tom", 37, "Tom@mail.com"));
-        people.add(new Person(++PEOPLE_COUNT, "Jerry", 29, "Jerry@mail.com"));
+    static{
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+
     }
 
     public List<Person> index() {
-        return people;
+        List<Person> personList = new ArrayList<>();
+        try {
+            Statement statement = connection.createStatement();
+            String SQL = "Select * from Person";
+            ResultSet resultSet = statement.executeQuery(SQL);
+
+            while(resultSet.next()) {
+                Person person = new Person();
+                person.setId(resultSet.getInt("id"));
+                person.setName(resultSet.getString("name"));
+                person.setAge(resultSet.getInt("age"));
+                person.setEmail(resultSet.getString("email"));
+                personList.add(person);
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        return personList;
     }
 
     public Person show(int id) {
-        return people.stream()
-                .filter(person -> person.getId() == id)
-                .findAny()
-                .orElse(null);
+//        return people.stream()
+//                .filter(person -> person.getId() == id)
+//                .findAny()
+//                .orElse(null);
+        return null;
     }
 
     public void save(Person person) {
-        person.setId(++PEOPLE_COUNT);
-        people.add(person);
+//        person.setId(++PEOPLE_COUNT);
+//        people.add(person);
+        try {
+            Statement statement = connection.createStatement();
+
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
     }
 
 
@@ -48,6 +81,6 @@ public class PersonDAO {
     }
 
     public void delete(int id) {
-        people.removeIf(person -> person.getId() == id);
+//        people.removeIf(person -> person.getId() == id);
     }
 }
