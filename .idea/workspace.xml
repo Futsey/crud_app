@@ -9,14 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86487434-9ba7-4d1f-ab92-d526e514f010" name="Changes" comment="Аннотация @ModelAttribute. HTML Формы (Thymeleaf)">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
+    <list default="true" id="86487434-9ba7-4d1f-ab92-d526e514f010" name="Changes" comment="CRUD приложение. PATCH, DELETE запросы.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/crud_app/config/MySpringMVCDispatcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud_app/config/MySpringMVCDispatcherServletInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/crud_app/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud_app/controllers/PeopleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/crud_app/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud_app/dao/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/crud_app/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/crud_app/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +169,9 @@
       <updated>1668574873290</updated>
       <workItem from="1668574874722" duration="7068000" />
       <workItem from="1668600440026" duration="1668000" />
-      <workItem from="1668660483797" duration="5292000" />
+      <workItem from="1668660483797" duration="11531000" />
+      <workItem from="1668676496843" duration="60000" />
+      <workItem from="1668739679193" duration="909000" />
     </task>
     <task id="LOCAL-00001" summary="Аннотация @ModelAttribute. HTML Формы (Thymeleaf)">
       <created>1668600918523</created>
@@ -177,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668600918524</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="CRUD приложение. PATCH, DELETE запросы.">
+      <created>1668667479489</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668667479489</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +206,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Аннотация @ModelAttribute. HTML Формы (Thymeleaf)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Аннотация @ModelAttribute. HTML Формы (Thymeleaf)" />
+    <MESSAGE value="CRUD приложение. PATCH, DELETE запросы." />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD приложение. PATCH, DELETE запросы." />
   </component>
 </project>
